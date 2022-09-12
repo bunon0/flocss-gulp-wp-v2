@@ -1,0 +1,1 @@
+{"version":3,"file":"libs/libs-test.js","names":["console","log","a","b"],"sources":["libs/libs-test.js"],"sourcesContent":["console.log(\"lobs-test.jsです\");\n\nlet a = \"a\";\n\nvar b = \"a\";\n"],"mappings":";;AAAAA,OAAO,CAACC,GAAR,CAAY,gBAAZ;AAEA,IAAIC,CAAC,GAAG,GAAR;AAEA,IAAIC,CAAC,GAAG,GAAR"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"main.js","names":["test","console","log"],"sources":["main.js"],"sourcesContent":["\"use strict\";\n\nconst test = () => {\n  console.log(\"main.jsです\");\n};\n\ntest();\n"],"mappings":"AAAA;;AAEA,MAAMA,IAAI,GAAG,MAAM;EACjBC,OAAO,CAACC,GAAR,CAAY,WAAZ;AACD,CAFD;;AAIAF,IAAI"}

@@ -1,0 +1,37 @@
+{
+	"stylelint.validate": ["css", "scss"],
+	"scss.validate": false,
+	"css.validate": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+
+	"emmet.includeLanguages": {
+		"ejs": "html"
+	},
+
+	"eslint.workingDirectories": [{ "mode": "auto" }],
+
+	"cSpell.ignorePaths": [
+		"**/package.json",
+		"**/package-lock.json",
+		"**/yarn.lock",
+		"**/node_modules/**",
+		"**/webpack.config.js",
+		"**/.vscode/",
+		"**/settings.json",
+		"**/gulpfile.js",
+		"src/js/libs",
+		"src/scss/libs"
+	]
+}

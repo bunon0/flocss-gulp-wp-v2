@@ -1,0 +1,269 @@
+/*
+  * Reset CSS
+*/
+
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role=list],
+ol[role=list] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	text-rendering: optimizespeed;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+	display: block;
+	max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+
+/* =====================
+ * リセットCSS以外のデフォルトスタイルを調整
+===================== */
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+input[type=text],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* =====================
+ * Baseスタイル
+===================== */
+
+:root,
+:root[theme=Default] {
+	--f-family-main: "游ゴシック体", "YuGothic", "Yu Gothic", "メイリオ", "Meiryo",
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+	--f-family-sub: "oswald", sans-serif;
+	--f-font-size: 16px;
+	--f-line-height: 1.6;
+	--f-weight-regular: 400;
+	--f-weight-medium: 500;
+	--f-weight-semibold: 600;
+	--f-weight-bold: 700;
+	--f-weight-black: 900;
+	--c-main: #ffffff;
+	--c-sub: #272727;
+	--c-sub-rgb-opacity25: rgba(39, 39, 39, 0.25);
+	--c-sub-rgb-opacity40: rgba(39, 39, 39, 0.4);
+	--c-sub-rgb-opacity60: rgba(39, 39, 39, 0.6);
+	--c-red: #ff0303;
+	--c-accent: #cccccc;
+	--c-accent-opacity-40: rgba(202, 202, 202, 0.4);
+	--c-gray: #8c8c8c;
+	--c-green: #08aa9f;
+	--c-twitter: #000000;
+	--c-github: #1a1414;
+}
+
+html {
+	font-size: 16px; /* Fix Safari bug with viewport units in calc() */
+	min-height: 0;
+}
+
+body {
+	background-color: var(--c-main);
+	color: var(--c-sub);
+	font-family: var(--f-family-main);
+	font-size: var(--f-font-size);
+	font-weight: var(--f-weight-medium);
+	line-height: var(--f-line-height);
+	word-break: break-all;
+}
+
+.l-container {
+	margin: 0 auto;
+	padding: 0 1.75rem;
+	width: 100%;
+}
+
+.c-button-line {
+	background-color: var(--c-sub-rgb-opacity60);
+	color: var(--c-main);
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: var(--f-weight-bold);
+	letter-spacing: 0.04em;
+	line-height: 1;
+	min-width: 15rem;
+	padding: 1.125rem 3rem 1.125rem 3rem;
+	position: relative;
+	text-align: center;
+	transition: all 0.3s;
+}
+
+.c-button-line:hover .c-button-line__text,
+.c-button-line:focus .c-button-line__text {
+	transform: translateX(-1em);
+}
+
+.c-button-line__text {
+	display: inline-block;
+	position: relative;
+	transition: all 0.3s;
+	z-index: 0;
+}
+
+.c-button-line__line {
+	background-color: var(--c-main);
+	display: inline-block;
+	height: 2px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+	transition: height 0.3s;
+	width: 2.5rem;
+}
+
+.p-test {
+	font-size: 1.875rem;
+}
+
+.u-space-contact {
+	margin-top: 7.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+html:focus-within {
+	scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-animation-duration: 0.01ms !important;
+	-webkit-animation-iteration-count: 1 !important;
+	animation-duration: 0.01ms !important;
+	animation-iteration-count: 1 !important;
+	scroll-behavior: auto !important;
+	transition-duration: 0.01ms !important;
+}
+
+}
+
+@media (min-width: 768px) {
+
+a:hover,
+a:focus {
+	opacity: 0.7;
+}
+
+button:hover,
+button:focus {
+	opacity: 0.7;
+}
+
+html {
+	font-size: clamp(12px, 12px + 0.0147058824 * (100vw - 768px), 16px);
+}
+
+.l-container {
+	max-width: 71rem;
+	padding: 0 3rem;
+}
+
+.c-button-line:hover {
+	opacity: 0.8;
+}
+
+.u-pc-hidden {
+	display: none;
+}
+
+.u-space-contact {
+	margin-top: 10rem;
+}
+
+}
+
+/*# sourceMappingURL=sourcemaps/style.css.map */
