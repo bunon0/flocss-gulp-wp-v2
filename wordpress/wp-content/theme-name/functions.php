@@ -83,6 +83,7 @@ function migration_exclude_filters($exclude_filters)
   $theme_name = esc_html(get_template());
   $exclude_filters = [
     "{$theme_name}/dev",
+    ".vscode"
   ];
   return $exclude_filters;
 }
@@ -94,7 +95,7 @@ add_filter('ai1wm_exclude_themes_from_export', "migration_exclude_filters");
 function backwpup_exclude_filters($fileExtensions)
 {
   $theme_name = esc_html(get_template()); //現在適用されているテーマの名前を取得
-  return $fileExtensions . ",/wp-content/db.php,/wp-content/themes/{$theme_name}/dev,/wp-content/db.php,/wp-content/themes/{$theme_name}/.vscode";
+  return $fileExtensions . ",/wp-content/db.php,/wp-content/themes/{$theme_name}/dev,/wp-content/db.php,/wp-content/.vscode";
 }
 add_filter('backwpup_file_exclude', "backwpup_exclude_filters");
 
