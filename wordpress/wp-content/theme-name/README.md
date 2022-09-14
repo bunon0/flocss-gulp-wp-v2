@@ -194,6 +194,3 @@ const compileJs = done => {
 
 ```Prettier - Code formatter```
 + 各ファイルhtml,css,jsのコードを整形してくれるツール
-
-```EJS language support```
-+ vscodeはデフォルトで言語サポートにejsがないので、対応するためのツール
