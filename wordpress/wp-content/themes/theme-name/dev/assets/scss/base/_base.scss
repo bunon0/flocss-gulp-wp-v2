@@ -92,5 +92,5 @@ body {
   line-height: var(--f-line-height);
   background-color: var(--c-main);
   color: var(--c-sub);
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
