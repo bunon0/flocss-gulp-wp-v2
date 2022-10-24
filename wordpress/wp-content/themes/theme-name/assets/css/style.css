@@ -10,6 +10,14 @@
 	box-sizing: border-box;
 }
 
+/* list Remove default style */
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+}
+
 /* Remove default margin */
 
 body,
@@ -17,9 +25,9 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
+ul,
+ol,
 figure,
 blockquote,
 dl,
@@ -27,16 +35,9 @@ dd {
 	margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-
-ul[role=list],
-ol[role=list] {
-	list-style: none;
-}
-
 /* Set core root defaults */
 
-html:focus-within {
+html {
 	scroll-behavior: smooth;
 }
 
@@ -57,61 +58,53 @@ a:not([class]) {
 
 /* Make images easier to work with */
 
-img,
-picture {
+img {
 	display: block;
 	max-width: 100%;
+	width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* Natural flow and rhythm in articles by default */
+
+article > * + * {
+	margin-top: 1em;
+}
+
+/* フォームリセット */
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-
-/* =====================
- * リセットCSS以外のデフォルトスタイルを調整
-===================== */
-
-img {
-	height: auto;
-	max-width: 100%;
-	vertical-align: top;
-}
-
-a {
-	color: inherit;
-	cursor: pointer;
-	display: inline-block;
-	text-decoration: none;
-}
-
-ul,
-li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: none;
+	background: transparent;
 	border: none;
+	border-radius: 0;
+	font: inherit;
 	outline: none;
 }
 
-input[type=text],
+/* stylelint-disable */
+
 textarea {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	resize: vertical;
+}
+
+/* stylelint-enable */
+
+input[type=checkbox],
+input[type=radio] {
+	display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+	cursor: pointer;
 }
 
 /* =====================
@@ -130,23 +123,26 @@ textarea {
 	--f-weight-semibold: 600;
 	--f-weight-bold: 700;
 	--f-weight-black: 900;
-	--c-main: #ffffff;
+	--c-main: #fff;
 	--c-sub: #272727;
-	--c-sub-rgb-opacity25: rgba(39, 39, 39, 0.25);
-	--c-sub-rgb-opacity40: rgba(39, 39, 39, 0.4);
-	--c-sub-rgb-opacity60: rgba(39, 39, 39, 0.6);
+	--c-sub-rgb-opacity25: rgb(39 39 39 / 25%);
+	--c-sub-rgb-opacity40: rgb(39 39 39 / 40%);
+	--c-sub-rgb-opacity60: rgb(39 39 39 / 60%);
 	--c-red: #ff0303;
-	--c-accent: #cccccc;
-	--c-accent-opacity-40: rgba(202, 202, 202, 0.4);
+	--c-accent: #ccc;
+	--c-accent-opacity-40: rgb(202 202 202 / 40%);
 	--c-gray: #8c8c8c;
 	--c-green: #08aa9f;
-	--c-twitter: #000000;
+	--c-twitter: #000;
 	--c-github: #1a1414;
 }
 
-html {
-	font-size: 16px; /* Fix Safari bug with viewport units in calc() */
-	min-height: 0;
+html { /* ----------------------------
+  * リキッドレイアウト rootのfont-sizeを可変にして、単位をremで指定することでレイアウトを可変にする
+    // 計算式参考サイト：https://lpeg.info/html/css_calc_font.html
+    // font-size: calc([最小値px] + ([最大値] - [最小値]) * ((100vw - [最小画面幅px]) / ([最大画面幅] - [最小画面幅])));
+    // clampと併用して上限下限を設定すること。しないと無限に変化し続ける
+  * ---------------------------- */
 }
 
 body {
@@ -156,52 +152,31 @@ body {
 	font-size: var(--f-font-size);
 	font-weight: var(--f-weight-medium);
 	line-height: var(--f-line-height);
+	overflow-wrap: break-word;
 	word-break: break-all;
 }
 
+img {
+	height: auto;
+	vertical-align: top;
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+}
+
 .l-container {
+	background-color: #ddd;
 	margin: 0 auto;
-	padding: 0 1.75rem;
+	padding: 0 1.25rem;
 	width: 100%;
 }
 
-.c-button-line {
-	background-color: var(--c-sub-rgb-opacity60);
-	color: var(--c-main);
-	display: inline-block;
+.c-test {
 	font-size: 1rem;
-	font-weight: var(--f-weight-bold);
-	letter-spacing: 0.04em;
-	line-height: 1;
-	min-width: 15rem;
-	padding: 1.125rem 3rem 1.125rem 3rem;
-	position: relative;
-	text-align: center;
-	transition: all 0.3s;
-}
-
-.c-button-line:hover .c-button-line__text,
-.c-button-line:focus .c-button-line__text {
-	transform: translateX(-1em);
-}
-
-.c-button-line__text {
-	display: inline-block;
-	position: relative;
-	transition: all 0.3s;
-	z-index: 0;
-}
-
-.c-button-line__line {
-	background-color: var(--c-main);
-	display: inline-block;
-	height: 2px;
-	position: absolute;
-	right: 0;
-	top: 50%;
-	transform: translate(0, -50%);
-	transition: height 0.3s;
-	width: 2.5rem;
 }
 
 .p-test {
@@ -212,48 +187,28 @@ body {
 	margin-top: 7.5rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (min-width: 375px) {
 
-html:focus-within {
-	scroll-behavior: auto;
-}
-
-*,
-*::before,
-*::after {
-	-webkit-animation-duration: 0.01ms !important;
-	-webkit-animation-iteration-count: 1 !important;
-	animation-duration: 0.01ms !important;
-	animation-iteration-count: 1 !important;
-	scroll-behavior: auto !important;
-	transition-duration: 0.01ms !important;
+html {
+	font-size: 16px;
 }
 
 }
 
 @media (min-width: 768px) {
 
+html {
+	font-size: clamp(12px, 12px + 4 * (100vw - 768px) / 232, 16px);
+}
+
 a:hover,
 a:focus {
 	opacity: 0.7;
 }
 
-button:hover,
-button:focus {
-	opacity: 0.7;
-}
-
-html {
-	font-size: clamp(12px, 12px + 0.0147058824 * (100vw - 768px), 16px);
-}
-
 .l-container {
-	max-width: 71rem;
-	padding: 0 3rem;
-}
-
-.c-button-line:hover {
-	opacity: 0.8;
+	max-width: 1060px;
+	padding: 0 1.875rem;
 }
 
 .u-pc-hidden {
@@ -262,6 +217,22 @@ html {
 
 .u-space-contact {
 	margin-top: 10rem;
+}
+
+}
+
+@media (min-width: 1000px) {
+
+html {
+	font-size: 16px;
+}
+
+}
+
+@media (max-width: 375px) {
+
+html {
+	font-size: clamp(12px, 4.2666666667vw, 16px);
 }
 
 }
