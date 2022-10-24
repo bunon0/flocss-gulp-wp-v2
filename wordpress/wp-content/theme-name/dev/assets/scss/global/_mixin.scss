@@ -1,8 +1,0 @@
-@use "./variable" as v;
-
-// メディアクエリ
-@mixin mq($breakpoint: md) {
-  @media #{map-get(v.$breakpoints, $breakpoint)} {
-    @content;
-  }
-}
