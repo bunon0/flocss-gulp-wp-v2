@@ -6,14 +6,14 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* list Remove default style */
 ul,
 ol {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 /* Remove default margin */
@@ -29,37 +29,37 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+	margin: 0;
 }
 
 /* Set core root defaults */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
-  line-height: 1.5;
-  min-height: 100vh;
-  text-rendering: optimizespeed;
+	line-height: 1.5;
+	min-height: 100vh;
+	text-rendering: optimizespeed;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
+	display: block;
+	max-width: 100%;
+	width: 100%;
 }
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 /* フォームリセット */
@@ -67,66 +67,66 @@ input,
 button,
 textarea,
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  font: inherit;
-  outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	font: inherit;
+	outline: none;
 }
 
 /* stylelint-disable */
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 /* stylelint-enable */
-input[type=checkbox],
-input[type=radio] {
-  display: none;
+input[type='checkbox'],
+input[type='radio'] {
+	display: none;
 }
 
-input[type=submit],
-input[type=button],
+input[type='submit'],
+input[type='button'],
 label,
 button,
 select {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* =====================
  * Baseスタイル
 ===================== */
 :root,
-:root[theme=Default] {
-  --f-family-main: "游ゴシック体", "YuGothic", "Yu Gothic", "メイリオ", "Meiryo",
-    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
-  --f-family-sub: "oswald", sans-serif;
-  --f-font-size: 16px;
-  --f-line-height: 1.6;
-  --f-weight-regular: 400;
-  --f-weight-medium: 500;
-  --f-weight-semibold: 600;
-  --f-weight-bold: 700;
-  --f-weight-black: 900;
-  --c-main: #fff;
-  --c-sub: #272727;
-  --c-sub-rgb-opacity25: rgb(39 39 39 / 25%);
-  --c-sub-rgb-opacity40: rgb(39 39 39 / 40%);
-  --c-sub-rgb-opacity60: rgb(39 39 39 / 60%);
-  --c-red: #ff0303;
-  --c-accent: #ccc;
-  --c-accent-opacity-40: rgb(202 202 202 / 40%);
-  --c-gray: #8c8c8c;
-  --c-green: #08aa9f;
-  --c-twitter: #000;
-  --c-github: #1a1414;
+:root[theme='Default'] {
+	--f-family-main: '游ゴシック体', 'YuGothic', 'Yu Gothic', 'メイリオ', 'Meiryo',
+		'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+	--f-family-sub: 'oswald', sans-serif;
+	--f-font-size: 16px;
+	--f-line-height: 1.6;
+	--f-weight-regular: 400;
+	--f-weight-medium: 500;
+	--f-weight-semibold: 600;
+	--f-weight-bold: 700;
+	--f-weight-black: 900;
+	--c-main: #fff;
+	--c-sub: #272727;
+	--c-sub-rgb-opacity25: rgb(39 39 39 / 25%);
+	--c-sub-rgb-opacity40: rgb(39 39 39 / 40%);
+	--c-sub-rgb-opacity60: rgb(39 39 39 / 60%);
+	--c-red: #ff0303;
+	--c-accent: #ccc;
+	--c-accent-opacity-40: rgb(202 202 202 / 40%);
+	--c-gray: #8c8c8c;
+	--c-green: #08aa9f;
+	--c-twitter: #000;
+	--c-github: #1a1414;
 }
 
 html {
-  /* ----------------------------
+	/* ----------------------------
   * リキッドレイアウト rootのfont-sizeを可変にして、単位をremで指定することでレイアウトを可変にする
     // 計算式参考サイト：https://lpeg.info/html/css_calc_font.html
     // font-size: calc([最小値px] + ([最大値] - [最小値]) * ((100vw - [最小画面幅px]) / ([最大画面幅] - [最小画面幅])));
@@ -135,83 +135,84 @@ html {
 }
 
 body {
-  background-color: var(--c-main);
-  color: var(--c-sub);
-  font-family: var(--f-family-main);
-  font-size: var(--f-font-size);
-  font-weight: var(--f-weight-medium);
-  line-height: var(--f-line-height);
-  overflow-wrap: break-word;
-  word-break: break-all;
+	background-color: var(--c-main);
+	color: var(--c-sub);
+	font-family: var(--f-family-main);
+	font-size: var(--f-font-size);
+	font-weight: var(--f-weight-medium);
+	line-height: var(--f-line-height);
+	overflow-wrap: break-word;
+	word-break: break-all;
 }
 
 img {
-  height: auto;
-  vertical-align: top;
+	height: auto;
+	vertical-align: top;
 }
 
 a {
-  color: inherit;
-  cursor: pointer;
-  display: inline-block;
-  text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
 }
 
-.l-container {
-  background-color: #ddd;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  width: 100%;
+.l-inner {
+	background-color: #ddd;
+	margin: 0 auto;
+	padding: 0 1.25rem;
+	width: 100%;
 }
 
 .p-test {
-  font-size: 1.875rem;
+	font-size: 1.875rem;
 }
 
 .u-space-contact {
-  margin-top: 7.5rem;
+	margin-top: 7.5rem;
 }
 
 @media (max-width: 375px) {
-  html {
-    font-size: clamp(12px, 4.2666666667vw, 16px);
-  }
+	html {
+		font-size: clamp(12px, 4.2666666667vw, 16px);
+	}
 }
 
 @media (min-width: 375px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: clamp(12px, 12px + 4 * (100vw - 768px) / 232, 16px);
-  }
-  a:hover, a:focus {
-    opacity: 0.7;
-  }
-  .l-container {
-    max-width: 1060px;
-    padding: 0 1.875rem;
-  }
-  .c-test {
-    font-size: 10px;
-  }
-  .c-test {
-    color: red;
-  }
-  .u-pc-hidden {
-    display: none;
-  }
-  .u-space-contact {
-    margin-top: 10rem;
-  }
+	html {
+		font-size: clamp(12px, 12px + 4 * (100vw - 768px) / 232, 16px);
+	}
+	a:hover,
+	a:focus {
+		opacity: 0.7;
+	}
+	.l-inner {
+		max-width: 1060px;
+		padding: 0 1.875rem;
+	}
+	.c-test {
+		font-size: 10px;
+	}
+	.c-test {
+		color: red;
+	}
+	.u-pc-hidden {
+		display: none;
+	}
+	.u-space-contact {
+		margin-top: 10rem;
+	}
 }
 
 @media (min-width: 1000px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
