@@ -12,10 +12,10 @@ module.exports = {
 
   overrides: [
     {
-      files: ["*.html"],
-      options: {
-        tabWidth: 2,
-      },
+      files: ['**/*.css', '**/*.scss', '**/*.html'],
+      options: { singleQuote: false },
+    },
+    {
       files: ["gulpfile.js"],
       options: {
         tabWidth: 2,
