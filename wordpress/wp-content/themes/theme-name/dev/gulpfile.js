@@ -22,8 +22,8 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 // css-declaration-sorter - scssコンパイル時にcssを並び替える・ソートする
 const cssSorter = require('css-declaration-sorter');
-// css-mqpacker - scssコンパイル時に重複しているメディアクエリをひとつにまとめる
-const mqpacker = require('css-mqpacker');
+//  gulp-group-css-media-queries - scssコンパイル時に重複しているメディアクエリをひとつにまとめる
+const groupmq = require('gulp-group-css-media-queries');
 // gulp-clean-css - コンパイル時にcssを圧縮する
 const cleanCss = require('gulp-clean-css');
 
@@ -122,7 +122,8 @@ const compileSass = done => {
     )
     .pipe(sassGlob())
     .pipe(sass({ includePaths: ['node_modules', 'assets/scss'] }))
-    .pipe(postcss([autoprefixer(), mqpacker(), cssSorter()]))
+    .pipe(groupmq())
+    .pipe(postcss([autoprefixer(), cssSorter()]))
     .pipe(mode.development(gulp.dest(paths.scss.dist, { sourcemaps: './sourcemaps' })))
     .pipe(mode.production(cleanCss())) //本番環境圧縮なしの場合は、コメントアウト
     .pipe(mode.production(gulp.dest(paths.scss.dist)));
